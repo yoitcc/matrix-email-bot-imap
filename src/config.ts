@@ -44,6 +44,13 @@ interface IConfig {
         bindIp: string;
         secret: string;
     };
+    imap: {
+        enabled: boolean;
+        host: string;
+        port: number;
+        username: string;
+        password: string;
+    }
     customMailTargets: Map<string, string[]>; // emails to room IDs
     defaultRoomConfig: IRoomConfig;
     roomConfigs: Map<string, IRoomConfig>; // room ID to config

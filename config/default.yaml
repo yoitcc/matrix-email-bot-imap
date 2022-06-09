@@ -16,7 +16,7 @@ mail:
   # Whether or not to run the mail server. If false, then the bot will rely on being fed messages
   # through the `post_message.js` script and not listen for any. This should be disabled if you
   # are running your own mail server.
-  enabled: true
+  enabled: false
 
   # The port to run the mail server on (SMTP)
   port: 25
@@ -24,6 +24,15 @@ mail:
   # The accepted domain for the mail server. This is used to determine which email addresses can
   # be automatically mapped to rooms in Matrix.
   domain: "email.t2bot.io"
+
+
+# IMAP configuration
+imap:
+  enabled: true
+  host: box.email-service.com
+  port: 587
+  username: some@email.com
+  password: somethingsecret
 
 # The web server configuration (used only for accessing messages in the web browser)
 web:
