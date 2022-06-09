@@ -47,24 +47,24 @@ export class EmailProcessor {
             simpleImapAsync.start(); // start listening
 
             simpleImapAsync.on("server:connected", () => {
-                LogService.info("EmailProcessor", "imapConnected"));
+                console.log("EmailProcessor", "imapConnected");
             });
 
             simpleImapAsync.on("server:disconnected", () => {
-                LogService.info("EmailProcessor", "imapDisonnected"));
+                console.log("EmailProcessor", "imapDisonnected");
             });
 
             simpleImapAsync.on("error", err => {
-                LogService.info("EmailProcessor", "imapErrored"));
+                console.log("EmailProcessor", "imapErrored");
             });
 
             simpleImapAsync.on("message", message => {
-                LogService.info("EmailProcessor", "imapMessageFollows:"));
-                LogService.info("EmailProcessor", message));
-                this.processIMAPMessage(message).then();
+                console.log("EmailProcessor", "imapMessageFollows:");
+                console.log("EmailProcessor", message);
+//                this.processIMAPMessage(message).then();
             });
         }
-
+    }
     public async processMessage(message: any) {
         if (await this.db.doesMessageExist(message.messageId)) {
             return;
